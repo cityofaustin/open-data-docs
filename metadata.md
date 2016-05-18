@@ -45,14 +45,28 @@ Any time a public dataset is shared internally or publically, it is beneficial t
 
 # List of required elements:
 
-***Holly*** - to make sure we are thinking these through, I am adding three comment areas to each element:  **purpose** (why include this component of metadata?), **granularity** (scale of element or field),  and **public or private**.   
-
-
 #### `Title`
 ~~Human-readable name of the asset. Should be in plain English and include sufficient detail to facilitate search and discovery.~~  
 Asset name in standard format to facilitate initial search and discovery.  
 
 Some titles start with the year, some with the department, some with publishing frequency (e.g. Annual, Weekly), some with a description.  If we have department and publishing frequency as separate categories, those can be removed from title.  Year should be moved to the end of the title so datasets separated by year sort together.  What else should be in the standard?  
+
+With Department and Frequency as categories:  
+  
+Asset Name  
+Asset Name - Date  
+  
+Without one or both:  
+Asset Name - Date, Frequency  
+Asset Name - Date, Department  
+Asset Name - Date, Frequency, Department  
+
+Date formats:   
+YYYY  
+YYYY/QQ  
+YYYY/MM  
+YYYY/MM/DD  
+
 **Purpose:**  To facilitate initial search and discovery.    
 **Granularity:**  Standardized format, character limit 100?  
 **Public**
@@ -65,8 +79,7 @@ Description or abstract in plain language with sufficient detail to determine wh
 **Public**  
 
 #### `Last Update`
-Most recent date on which the dataset was changed, updated or modified.   
-***Holly*** - ~~I am assuming this will be automated.~~  Yes it will be automated!   
+Most recent date on which the dataset was changed, updated or modified.   Automated.  
 **Purpose:**  identifying stale datasets  
 **Granularity:**  date (could be datetime, but really?)  
 **Public**
@@ -74,17 +87,15 @@ Most recent date on which the dataset was changed, updated or modified.
 #### ~~`Publisher`~~
 ~~The publishing entity and optionally their parent organization(s).~~   
 
-***Holly*** Perhaps more specifically   
 #### `City Department`
-**Purpose:**  Publisher is a little too generic.  City Department gives the user at least a basic idea where the data came from if they are pursuing further inquiry.  
+**Purpose:**  Publisher is a little too generic.  City Department gives the user at least a basic idea where the data came from if they are pursuing further inquiry.   
 **Granularity:**  City department?  Department and division?  Anything more granular than department would need to be optional since datasets may span departments or be the results of collaborative effort.  If we don't have any multi-departmental datasets, then Department is fine.  Drop-down list.  
 **Public**
 
 #### ~~`Tags`~~  `Keywords`
-Tags (or keywords) help users discover your dataset; please include terms that would be used by technical and non-technical users.   
-***Holly*** - use keywords.  Tags, labels, etc. are used by proprietary software.   
-**Purpose:** for use in search fields - how would this differ from the information in the description metadata?  Not sure how to define this so the two are explicitly separate.  
-**Granularity:** Character limit XXX  
+~~Tags (or keywords) help users discover your dataset; please include terms that would be used by technical and non-technical users.~~   
+**Purpose:**  Technical and plain language search terms not otherwise included in the description or title to assist users in locating the data of interest.  
+**Granularity:** Character limit  
 **Public**  
 
 ####`Technical Contact`
@@ -92,9 +103,6 @@ Email address of the technical contact responsible for the data.  Chris has dete
 **Purpose:**  if a dataset is stale or has issues, another City user can ask if the set should be marked closed or let them know to fix it.   
 **Granularity:**  what is our max email address length?      
 **PRIVATE**  
-
-#### `Category`  GO CHRIS GO  
-Even if categories are optional at the start, it's a good exercise to try to categorize our datasets.  If we can find a logical categorization strategy, we can better understand how to help the public find what they are looking for.  
 
 ####`Rowcount`
 **Purpose:**  Users can choose to set page size or download dataset depending on the device used and need.  Automated.  
@@ -111,25 +119,62 @@ Even if categories are optional at the start, it's a good exercise to try to cat
 **Granularity:**  same issue  
 **Public**  
 
+#### `Category`  IN PROGRESS 
+Even if categories are optional at the start, it's a good exercise to try to categorize our datasets.  If we can determine a logical categorization strategy, we can better understand how to help the public find what they are looking for.  
+
 #### `Update Frequency`
-**Purpose:** Right now we're wasting title space with the words Annual, Weekly, Monthly, Quarterly, Every Five Years, etc.  
-And some data sets may be one-time things.  Take, for example, oh, a post-SXSW customer survey.  They might not ask all the same questions two years in a row.   
-But if I'm looking at data for road closures, I  want to know if I need to check back for changes tomorrow or next month. Makes a difference.  
+**Purpose:**  Threefold:  publically, so the user knows how often to check for changes in volatile data; internally, to determine when a dataset has become stale or lost its technical contact; and to remove the need for these words in the standardized title.   
 **Granularity:**  editable drop-down list  
 **Public**  
 
 #### `Related Datasets`
-**Purpose:**  Separate datasets that may be useful together.  Some of these exist already and have been incorporated into GIS maps -- awesome.  Let's say, bike paths, public parks events, and bus schedules.  All different kinds of data, but if a person Probably superceded by Category  
+**Purpose:**  To guide the public toward data of similar interest.  Datasets in a series, or (if we monitor this) datasets frequently visited together or representing similar information.  May be superceded by Category and Subcategory.  
 **Granularity:**  title and URL with those character limits  
 **Public**  
 
 #### `Data Dictionary`
-**Purpose:**  I stole this from San Fran but wow, it would be wonderful.  I have column names right now with things like International Revenue Enplanements, International Revenue Deplanements, Domestic Revenue Enplanements, Domestic Revenue Deplanements, International Non-Revenue Enplanements...those are the short ones.  My columns are ten feet wide.  
-How much nicer visually if I could use IntRevEnp, IntRevDep, DomRevEnp, etc. and let the data dictionary explain what the abbreviations mean and what the heck an Enplanement is and why belly freight is different from cargo freight.  
-I won't even go into the data sets where one column value is pounds per square inch and the next in liters...  
-**Granularity:**  nvarchar(max) (just kidding - 1000 chars?) but try to keep it brief  
+**Purpose:**  Any clarification necessary for interpreting the data.  Including but not limited to units of measure; explanation of specific technical terms, abbreviations and acronyms; description of terms which exist only in the sphere of interest represented by the data; expansion of column names representing a related series.  
+**Granularity:**  column max but try to keep it brief  
 **Public**  
 
+#### `Views`
+**Purpose:** Determine whether dataset is being used and/or should be more or less frequently updated  
+**Granularity:** integer   
+**Public**  
+
+#### `Downloads`
+**Purpose:** Same as Views   
+**Granularity:** integer   
+**Public**  
+
+#### `Types`
+**Purpose:** Similar to viewType/displayType if we can get that clearly defined.  This field would clarify datasets with similar or identical data but offering different formats for different purposes.
+**Granularity:** drop-down list  
+**Public**
+
+#### Metadata in Socrata 
+
+**For discussion**   
+department  (City Department)  
+attribution  
+category (Category)  
+description (Description)  
+title (Title)  
+frequency (Update Frequency)  
+issued  
+modified (Last Update)  
+displayType (Types)  
+ViewCount(Views)  
+downloadCount (Downloads)  
+numberOfComments  
+viewType (Types)  
+accessLevel (public/private)    
+landingPage    
+dtype  
+keyword (Keywords)  
+contactPoint (Technical Contact)  
+publisher  
+identifier  
 
 
 #### References

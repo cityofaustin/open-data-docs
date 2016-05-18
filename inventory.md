@@ -84,7 +84,7 @@ Departments should implement tools and processes that will accelerate the openin
 * Use “required” fields and “required-if-applicable” fields on data.austintexas.gov (includes indicating whether data can be made publicly available).
 •	Submit to ODI via INSERT METHOD the inventory as a single JSON file using the defined schema from data.austintexas.gov. ODI invites department input on the option of replacing future submission with an API via a discussion on data.austintexas.gov.
 
-#### Maintain the Enterprise Data Inventory (ongoing after INSERT DATE)
+#### Maintain the Enterprise Data Inventory (ongoing after INSERT DATE) ## Let's discuss Insert dates
 * Continue to expand, enrich, and open the Inventory on an on-going basis
 * Update the Inventory Schedule submitted on INSERT DATE on a quarterly basis on the INSERT ULR OR METHOD
 
@@ -124,9 +124,64 @@ Departments may develop criteria at their discretion for prioritizing the openin
 * .....
 
 
-## Tools for Creating Enterprise and Public Data Inventory
+## How to Create Your Data Catalog (Inventory)
+The first major task for the Data Liaisons is to create a data catalog (or inventory) of your
+department’s data. Below we provided guidance on how to do this. But we recognize that this
+will be in part a learning process. As a result, we will make changes to this guidance based on
+your feedback. After the initial catalog creation, this process may continue as new datasets are
+created, discovered or requested by other parties.
+Follow the 3 major steps below to conduct your data inventory:
+  1. Identify data sources
+  2. Brainstorm and identify datasets in each data source
+  3. Complete dataset inventory template (for each dataset)
+We also included an example from the Rent Board that you can use for guidance. Appendix A.
+includes templates to support this process.
+Also, visit this resource for additional guidance:
 
-### Identification of Data Assets and Datasets
+  ● [Bloomfire Austin Open Data] (https://opendata.bloomfire.com)
+
+## Step 1: Identify data sources
+Your data may be housed in a variety of places from
+inside information systems or databases
+to shared drives and folders. This can also include 3rd party vendors and data hosted on vendor
+systems. Step 1 is about identifying the major data sources in your department.
+
+Questions to help identify and discover data sources:
+  1. What information systems does your department use? On premise or hosted? 
+  2. What databases does your department use? These include databases that are maintained by other departments.
+  3. What applications capture information or are used in your business processes?
+  4. Are some data resources kept in spreadsheets (on shared or individual drives)?
+  5. What reports do you create on a regular basis?
+  5. What information are we already publishing and where did that information come from?  For each of the data sources:
+  6. Provide a name and brief description of the data sources
+  7. Capture any technical details and point of contacts
+Appendix A. includes a templates for this process.
+
+## Step 2: Identification of Data Assets and Datasets
+Some of your information sources may be fairly straightforward (e.g. a single sheet in a
+spreadsheet). In these cases, you have already identified the dataset.
+In addition, you may already have a list of datasets you are publishing or plan to publish.
+But others, like relational databases, may be very complex. Identifying subsets of the database
+that could serve as datasets, probably requires some brainstorming. You may want to include
+your PIO, data stewards and lead analysts in this process.
+To help brainstorm, use the questions below:
+  1. What data populates your monthly or quarterly reports?
+  2. What departmental data is currently publicly available on DataSF or elsewhere online?
+  3. What data does your department use for internal performance and trend analysis?
+  4. What information is published as a performance metric?
+  5. What data is reported to federal, state or local agencies?
+  6. Talk with your Public Information Officer (PIO) what data has been requested under Sunshine?
+  7. What data do other departments ask for?
+  8. What kinds of open data are similar agencies across the country publishing?
+      Caution: Don’t exclude any datasets based on privacy or confidentiality concerns! Our goal is to
+      have a holistic picture of our data. Based on this big picture, we can then decide what we should
+      publish. Step 3 provides a means to capture privacy and confidentiality concerns.
+
+## Step 3: Complete dataset inventory template
+For each dataset you identify in Step 2, complete the inventory template. Include:
+1. New datasets (identified via brainstorming)
+2. Existing datasets, including already published datasets
+Appendix A. includes the templates and description of template fields.
 
 #### Purpose
 
@@ -160,11 +215,12 @@ Test purpose
 
 #### Objectives
 
-* ...
-* ...
-* ...
+* Low Inventory Complexity
+* Medium Inventory Complexity
+* High Inventory Complexity
 
 ### Publish Data to Airtable 
+Brad will include instructions to AirTable.
 
 #### Purpose
 
@@ -191,6 +247,10 @@ To publish to Airtable . . .
 * . . .
 
 # View the current inventory (experimental)
+
+[Metadata AirTable] (https://airtable.com/tblHs9vJwdOxhrbQB/viwh4RJGgLjQSxqTB)
+
+[Erin AirTable] (https://airtable.com/tbll3avqmLebbGmS9/viwxHAlM6pk5JrpX8)
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrz1xwqcxvm117x1?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
