@@ -4,7 +4,7 @@ title: 'City Data Inventory (DRAFT)'
 file: inventory.md
 ---
 
-**Status:** Unapproved draft  2
+**Status:** Unapproved draft  3
 
 **Next step:** Design inventory schema and add content describe the project  
 
